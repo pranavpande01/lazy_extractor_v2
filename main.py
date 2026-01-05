@@ -10,7 +10,7 @@ from utils.db_ops import reset_db_worker_column,generate_result
 from utils.agent_ops import assigner_prompt_formatter
 
 strategist_workflow = Workflow(
-    name="Strategist Workflow",
+    name="Main Workflow",
     steps=[
         strategist,
         printer1,
