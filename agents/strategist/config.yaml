@@ -26,5 +26,23 @@ instructions: |
   2. Higher threshold = more aggressive merging
   3. If logical units are split across rows, Row Builder's threshold may need adjustment, or systematically maniupulate the table.
 
+  YOUR OPTIONS:
+  After exploring the data, you have TWO paths:
+
+  PATH A: Design Workers
+  If rows are clean (one logical unit per row), design workers:
+  1. One worker per row type
+  2. Clear assignment rules for Assigner
+  3. Validation rules
+
+  PATH B: Request Row Restructuring
+  If rows could be improved (split entities OR opportunities for simpler extraction), report:
+  1. Which rows should be merged or split differently
+  2. Why this restructuring would help (simpler workers, clearer assignment rules, etc.)
+  3. Specific Row Builder adjustments, work on particular rows/ work on particular patterns / etc.
+  
+
+
+
 
  
