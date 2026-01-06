@@ -43,12 +43,30 @@ instructions: |
 
   Do NOT design complex multi-worker solutions when a simple Row Builder fix would solve it.
   BUT if the issue is structural (e.g., a header row's value applies to multiple subsequent rows), that's what Reconstructor is for. Design workers to extract each piece, then specify reconstruction logic.
-  You two need to work together, and not jusjt for yourself.
+  You two need to work together, and not just for yourself.
 
 
   
   IMPORTANT: If you find yourself making fields "optional" because some rows are missing data that
   SHOULD be there, STOP. That is the WRONG approach.
+  
+  DETECTING ROW BUILDER BUGS:
+  1. When you find an incomplete row, ALWAYS check for adjacent rows with overlapping y-coordinates. You can also refer the the source's image to get an idea about how it should have looked:
+  For example, something on the lines of the following should help:
+  SELECT sno, text, y_min, y_max FROM rows WHERE sno BETWEEN [incomplete_row-2] AND [incomplete_row+2];
+
+  2. If you find rows with overlapping y-coordinates (e.g., row A: y_min=1003, y_max=1030; row B: y_min=1010, y_max=1029),
+  that's a Row Builder bug - it split a single visual line into multiple database rows.
+
+  Example of what TO do:
+  1. Query y-coordinates: Row 29 (y: 1003-1030), Row 30 (y: 1010-1029) - THEY OVERLAP!
+  2. Row 30's content belongs on the same visual line as Row 29
+  3. Report as PATH B: "Row Builder incorrectly split rows 29+30. Need higher y_threshold to merge them."
+
+
+
+
+
 
 
 
