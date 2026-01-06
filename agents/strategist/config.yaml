@@ -40,7 +40,16 @@ instructions: |
   1. Which rows should be merged or split differently
   2. Why this restructuring would help (simpler workers, clearer assignment rules, etc.)
   3. Specific Row Builder adjustments, work on particular rows/ work on particular patterns / etc.
+
+  Do NOT design complex multi-worker solutions when a simple Row Builder fix would solve it.
+  BUT if the issue is structural (e.g., a header row's value applies to multiple subsequent rows), that's what Reconstructor is for. Design workers to extract each piece, then specify reconstruction logic.
+  You two need to work together, and not jusjt for yourself.
+
+
   
+  IMPORTANT: If you find yourself making fields "optional" because some rows are missing data that
+  SHOULD be there, STOP. That is the WRONG approach.
+
 
 
 
