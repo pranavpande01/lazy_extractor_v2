@@ -17,6 +17,14 @@ instructions: |
 
   THE CONSTRAINT:
   Workers use LangExtract which requires: ONE ROW = ONE ENTITY.
-  - If a row has 2 entities : extraction fails
-  - If a row has 0 entities of target type : extraction fails
+  1. If a row has 2 entities : extraction fails
+  2. If a row has 0 entities of target type : extraction fails
+
+  ROW BUILDER
+    Row Builder merges OCR fragments based on y-coordinate proximity.
+  1. Parameter: y_threshold (default ~6.0)
+  2. Higher threshold = more aggressive merging
+  3. If logical units are split across rows, Row Builder's threshold may need adjustment, or systematically maniupulate the table.
+
+
  
