@@ -10,5 +10,5 @@ INSTRUCTIONS=CONFIG["instructions"]
 PROMPT=CONFIG["prompt"]
 
 
-def get_prompt(field_spec:list,examples:str,db_path:str,ocr_folder:str)->None:
-    pass
+def get_prompt(fields_fmt:list,examples:str,db_path:str,ocr_folder:str)->None:
+    return PROMPT.format(fields_fmt=fields_fmt,examples=examples,db_path=db_path,ocr_folder=ocr_folder)

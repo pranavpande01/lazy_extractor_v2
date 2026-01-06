@@ -119,6 +119,7 @@ instructions: |
 prompt_template: |
   I need to extract these fields from a document:
   {fields_fmt}
+  for example: in [a,b,c,d:{e,f:{g}}],  f:{g} means some sort of nesting/beloging
 
   Expected Output(Ground Truth Examples):
   {examples}
