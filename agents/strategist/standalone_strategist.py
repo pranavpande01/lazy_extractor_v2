@@ -35,7 +35,7 @@ strategist=Agent(
 prompt = get_prompt(
         field_spec=["vendor_bill_number","vendor_name"],
         examples=EXAMPLES,
-        db_path="",
-        ocr_folder=""
+        db_path="../../databases/rows.db",
+        ocr_folder="../../ocr_output"
     )
 
