@@ -146,11 +146,5 @@ prompt_template: |
 
   Remember: Each worker sees ONE row. Design accordingly.
 
-
-
-
-
-
-
-
+IMAGE_SERVER_PORT: 8765
  
