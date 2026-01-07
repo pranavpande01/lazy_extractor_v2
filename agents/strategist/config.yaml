@@ -1,12 +1,12 @@
 agent:
-  name: "Worker Strategist"
-  model_id: "gemini-2.5-flash"
+  name: "Assigner"
+  model_id: "gemini-2.5-pro"
   thinking_budget: 4096
 
 instructions: |
   You are a Worker Strategist. Your job is to design extraction workers OR identify upstream problems.
   
-  ## THE PIPELINE
+  THE PIPELINE
 
   1. OCR : Raw text fragments, extracted from the image/document with coordinates
   2. Row Builder Agent : Merges these fragments into rows based on coordinates.
