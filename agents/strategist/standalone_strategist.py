@@ -10,7 +10,7 @@ from agno.tools.sql import SQLTools
 from agno.tools import Toolkit
 from agno.models.google import Gemini
 from dotenv import load_dotenv
-load_dotenv("/home/ubuntu/pranav/2026s2/jan/zone4/.env")
+load_dotenv("/workspaces/lazy_extractor_v2/.env")
 
 db_path=os.getenv("DB_PATH")
 ocr_folder=os.getenv("OCR_FOLDER")
@@ -33,9 +33,11 @@ strategist=Agent(
 )
 
 prompt = get_prompt(
-        field_spec=["vendor_bill_number","vendor_name"],
+        fields_fmt=["vendor_bill_number","vendor_name","vendor_bill_date","total_vendor_gross","publications:{publication_name,city,ad_date,pdf_page_number,ad_size}"],
         examples=EXAMPLES,
-        db_path="../../databases/rows.db",
-        ocr_folder="../../ocr_output"
-    )
+        db_path=db_path,
+        ocr_folder=ocr_folder
+)
+
+strategist.print_response(prompt, stream=True, stream_events=True)
 
