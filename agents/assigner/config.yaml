@@ -118,3 +118,29 @@ prompt_template: |
   1. NEVER use LIMIT 1 for anchors - patterns repeat across pages
   2. Use CTEs to pair each start anchor with its corresponding end anchor
   3. Verify page coverage before executing UPDATE
+
+prompt_template_multi_workers: |
+  WORKER TASK
+
+  Proposed Workers: 
+  {worker_task}
+  
+  Example Inputs(from actual data)/Outputs for each worker:
+  {example_section}
+  YOUR JOB
+
+  Find which rows in the database should be sent to this worker.
+
+  Steps:
+  1. Check how many pages exist: `SELECT DISTINCT page_no FROM rows`
+  2. Search for target data - note which pages contain it
+  3. Find structural anchors (headers, totals, section markers)
+  4. Count how many anchor pairs exist across the document
+  5. Write a SQL query using CTEs to capture ALL blocks, not just the first
+  6. VERIFY: Run SELECT first, check it covers all expected pages
+  7. Execute the UPDATE only after verification
+
+  REMEMBER:
+  1. NEVER use LIMIT 1 for anchors - patterns repeat across pages
+  2. Use CTEs to pair each start anchor with its corresponding end anchor
+  3. Verify page coverage before executing UPDATE

@@ -7,7 +7,7 @@ with open(CONFIG_PATH) as f:
 
 AGENT_CONFIG=CONFIG["agent_config"]
 INSTRUCTIONS=CONFIG["instructions"]
-PROMPT=CONFIG["prompt"]
+PROMPT=CONFIG["prompt_template"]
 
 
 def get_prompt(fields_fmt:list,examples:str,db_path:str,ocr_folder:str)->None:
