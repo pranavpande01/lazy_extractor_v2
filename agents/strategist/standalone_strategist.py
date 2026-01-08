@@ -32,12 +32,3 @@ strategist=Agent(
     markdown=True
 )
 
-prompt = get_prompt(
-        fields_fmt=["vendor_bill_number","vendor_name","vendor_bill_date","total_vendor_gross","publications:{publication_name,city,ad_date,pdf_page_number,ad_size}"],
-        examples=EXAMPLES,
-        db_path=db_path,
-        ocr_folder=ocr_folder
-)
-
-strategist.print_response(prompt, stream=True, stream_events=True)
-
