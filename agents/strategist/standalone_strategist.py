@@ -2,7 +2,7 @@ import sys
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent))  
 from tools import StrategistTools
-from prompts import AGENT_CONFIG, INSTRUCTIONS, get_prompt
+from utils import AGENT_CONFIG, INSTRUCTIONS, get_prompt
 from assets import EXAMPLES
 import os
 from agno.agent import Agent
