@@ -1,6 +1,0 @@
-printer1=""
-printer2=""
-printer3=""
-printer4=""
-printer5=""
-printer6=""
