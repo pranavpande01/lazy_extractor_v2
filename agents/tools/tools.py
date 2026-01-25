@@ -1,10 +1,10 @@
 
-import os, glob, threading, http.server, socketserver, time, base64, sqlite3
 from io import BytesIO
 from typing import Optional
-from PIL import Image as PILImage
 from agno.media import Image
+from PIL import Image as PILImage
 from agno.tools.function import ToolResult
+import os, glob, threading, http.server, socketserver, time, base64, sqlite3
 
 
 class ImageServer:
