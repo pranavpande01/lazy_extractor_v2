@@ -1,8 +1,8 @@
 import os,yaml
-from dotenv import load_dotenv
 from pathlib import Path
 from agno.agent import Agent
 from agno.tools import Toolkit
+from dotenv import load_dotenv
 from agno.tools.sql import SQLTools
 from agno.models.google import Gemini
 from agents.tools.tools import StrategistTools
