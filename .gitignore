@@ -210,7 +210,6 @@ __marimo__/
 agents/strategist/assets.py
 *.db
 *.json
-*.png
 *.jpg
 *.jpeg
 *.gif
